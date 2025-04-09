@@ -15,7 +15,7 @@ A partir de pandemia de covid em 2020, com a popularização do modelo de teletr
 
 Neste MVP vou limitar o perímetro aos três principais grupo de operadoras (Tim, Vivo e Claro), ao serviço Banda larga fixa (para a agência SCM – serviço de comunicação multimídia) e sete municípios capitais do Brasil.
 
-As reclamações Anatel consideradas nesta avaliação são de motivo técnico (Qualidade, Funcionamento e Reparo, Instalação | Ativação ou Habilitação | Mudança de Endereço) e os Indicadores SCM que compõe o Índice de Qualidade do Serviço (IQS) que são os de rede -IND4, IND5, IND6, IND7, IND8- e o de relacionamento- IND9, de acordo com o resumo abaixo:
+As reclamações Anatel consideradas nesta avaliação são de motivo técnico (Qualidade, Funcionamento e Reparo, Instalação / Ativação ou Habilitação / Mudança de Endereço) e os Indicadores SCM que compõe o Índice de Qualidade do Serviço (IQS) que são os de rede -IND4, IND5, IND6, IND7, IND8- e o de relacionamento- IND9, de acordo com o resumo abaixo:
 
 | Grupo          | Acrônimo | Indicador                                      | Descrição                                                                                                                                  |
 |----------------|----------|------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
@@ -26,7 +26,7 @@ As reclamações Anatel consideradas nesta avaliação são de motivo técnico (
 | Redes          | IND8     | Disponibilidade                                | Expressa o tempo em que o serviço está em operação, à disposição dos usuários sem interrupção                                              |
 | Relacionamento | IND9     | Cumprimento de Prazo                           | Expressa o atendimento a solicitações de instalação, reparo e manutenção agendados e realizados dentro dos prazos acordados                |
 
-Abaixo segue a lista dos valores de corte para indicadores de rede IND4  a IND7 para obtenção do resultado das medidas, onde o resultado de medidas é o percentual de atingimento dos valores de corte.
+Abaixo segue a lista dos valores de corte para indicadores de rede IND4  a IND7 para obtenção do resultado das medidas, onde o **resultado de medidas é o percentual de atingimento dos valores de corte**.
 
 | Tecnologia | IND4 (DW) | IND4 (UP) | IND5  | IND6  | IND7 |
 |------------|-----------|-----------|-------|-------|------|
@@ -35,7 +35,7 @@ Abaixo segue a lista dos valores de corte para indicadores de rede IND4  a IND7 
 
 ## Coleta, Modelagem e Carga
 
-A coleta das informações foi feita diretamente do site da Anatel (anatel.gov.br) nas opções de Reclamações, Acessos banda larga fixa e indicadores Rqual (Regulamento de Qualidade dos Serviços de Telecomunicações – RQUAL, aprovado pela Resolução nº 717/2019).
+A coleta das informações foi feita diretamente do site da Anatel (anatel.gov.br) nas opções de Reclamações, Acessos banda larga fixa e Indicadores Rqual (Regulamento de Qualidade dos Serviços de Telecomunicações – RQUAL, aprovado pela Resolução nº 717/2019).
 
 https://www.anatel.gov.br/dadosabertos/paineis_de_dados/consumidor/consumidor_reclamacoes.zip
 https://www.anatel.gov.br/dadosabertos/paineis_de_dados/acessos/acessos_banda_larga_fixa.zip
