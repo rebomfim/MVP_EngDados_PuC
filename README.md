@@ -6,14 +6,33 @@ MVP - Engenharia de Dados (40530010057_20250_01)
 Desafio: “Os Indicadores da agência reguladora de telecomunicações - Anatel que compõe o IQS (Índice de Qualidade do Serviço) e o número de reclamações por problemas técnicos influenciam diretamente na variação da base de clientes das operadoras?”
 
 25 anos após a privatização do setor de Telecomunicações, é sabido que os serviços de telefonia e banda larga fixos assim como móveis atingiram altos patamares de maturidade do ponto de vista de tecnologia e cobertura. As áreas comerciais das operadoras seguem constantemente se empenhando para que o cliente tenha uma boa experiência com atendimento e ofertas atrativas, e as áreas técnicas com qualidade de serviço e cobertura abrangente.
-Neste MVP tentaremos responder se os indicadores que compões o índice de qualidade do serviço (IQS) de Banda larga influenciam no número de reclamações técnicas na Anatel e se consequentemente impactam na manutenção de número de clientes na base.
-Entende-se que o número de reclamações na agência reguladora é um termômetro de insatisfação com o serviço, e que o Churn é causado por muitos fatores, mas será que os indicadores regulatórios do IQS são capazes de refletir o que acontece no mercado? 
-A partir de pandemia de covid em 2020, com a popularização do modelo de teletrabalho, aumento de  aplicativos de streaming, rede social, dispositivos inteligentes (ex. alexa), o serviço de banda larga fixa adquiriu um alto nível de exigência de seu público consumidor.
-Neste MVP vou limitar o perímetro aos três principais grupo de operadoras (Tim, Vivo e Claro), ao serviço Banda larga fixa (para a agência SCM – serviço de comunicação multimídia) e sete municípios capitais do Brasil. 
+
+Neste MVP tentaremos responder se os indicadores que compões o índice de qualidade do serviço (IQS) de Banda larga fixa (internet residencial) influenciam no número de reclamações técnicas na Anatel e se consequentemente impactam na manutenção de número de clientes na base.
+
+Entende-se que o número de reclamações na agência reguladora é um termômetro de insatisfação com o serviço, e que o Churn é causado por muitos fatores, mas será que os indicadores regulatórios do IQS são capazes de refletir o que acontece no mercado?
+
+A partir de pandemia de covid em 2020, com a popularização do modelo de teletrabalho, aumento de  aplicativos de streaming, rede social, dispositivos inteligentes (ie. Amazon Alexa), o serviço de banda larga fixa adquiriu um alto nível de exigência de seu público consumidor.
+
+Neste MVP vou limitar o perímetro aos três principais grupo de operadoras (Tim, Vivo e Claro), ao serviço Banda larga fixa (para a agência SCM – serviço de comunicação multimídia) e sete municípios capitais do Brasil.
+
 As reclamações Anatel consideradas nesta avaliação são de motivo técnico (Qualidade, Funcionamento e Reparo, Instalação | Ativação ou Habilitação | Mudança de Endereço) e os Indicadores SCM que compõe o Índice de Qualidade do Serviço (IQS) que são os de rede -IND4, IND5, IND6, IND7, IND8- e o de relacionamento- IND9, de acordo com o resumo abaixo:
 
+| Grupo          | Acrônimo | Indicador                                      | Descrição                                                                                                                                  |
+|----------------|----------|------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
+| Redes          | IND4     | Cumprimento da velocidade de download e upload | Expressa a capacidade da rede em relação ao cumprimento das referências ou valores contratados de volume de dados transmitidos por segundo |
+| Redes          | IND5     | Latência bidirecional da Conexão de Dados      | Expressa o desempenho da rede em relação ao tempo de transmissão de pacotes de dados                                                       |
+| Redes          | IND6     | Variação de Latência da Conexão de Dados       | Expressa o desempenho da rede em relação à variação do tempo de transmissão de pacotes de dados                                            |
+| Redes          | IND7     | Perda de Pacotes da Conexão de Dados           | Expressa a capacidade da rede de entregar os pacotes de dados ao destino sem ocorrência de perdas                                          |
+| Redes          | IND8     | Disponibilidade                                | Expressa o tempo em que o serviço está em operação, à disposição dos usuários sem interrupção                                              |
+| Relacionamento | IND9     | Cumprimento de Prazo                           | Expressa o atendimento a solicitações de instalação, reparo e manutenção agendados e realizados dentro dos prazos acordados                |
+
 Abaixo segue a lista dos valores de corte para indicadores de rede IND4  a IND7 para obtenção do resultado das medidas, onde o resultado de medidas é o percentual de atingimento dos valores de corte.
- 
+
+| Tecnologia | IND4 (DW) | IND4 (UP) | IND5  | IND6  | IND7 |
+|------------|-----------|-----------|-------|-------|------|
+| DSL        | 5 Mbit/s  | 1 Mbit/s  | 80 ms | 40 ms | 2%   |
+| GPON       | 25 Mbit/s | 5 Mbit/s  | 80 ms | 40 ms | 2%   |
+
 ## Coleta, Modelagem e Carga
 
 A coleta das informações foi feita diretamente do site da Anatel (anatel.gov.br) nas opções de Reclamações, Acessos banda larga fixa e indicadores Rqual (Regulamento de Qualidade dos Serviços de Telecomunicações – RQUAL, aprovado pela Resolução nº 717/2019).
