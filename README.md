@@ -43,7 +43,7 @@ https://www.anatel.gov.br/dadosabertos/paineis_de_dados/consumidor/consumidor_re
 https://www.anatel.gov.br/dadosabertos/paineis_de_dados/acessos/acessos_banda_larga_fixa.zip
 https://www.anatel.gov.br/dadosabertos/paineis_de_dados/qualidade/indicadores_rqual.zip
 
- Optei por pré-processar os arquivos de entrada, baixando na minha máquina local os zips, dezipando também local, e fazendo upload para o DBFS - Databricks, pois em outras tentativas o meu cluster foi derrubado ou tive problema de memória que não contornei a tempo do MVP.
+ Como os arquivos do site Anatel são grandes (~2G), optei por pré-processar os arquivos de entrada, baixando na minha máquina local os zips, dezipando também local, e fazendo upload para o DBFS - Databricks, pois em outras tentativas o meu cluster foi derrubado ou tive problema de memória que não contornei a tempo do MVP.
 
 Usando como referência a arquitetura medalhão, os dados passaram pelas camadas bronze, prata e ouro até obter uma tabela final com os dados relevantes para a análise em powerbi da relação entre indicadores Anatel, número de clientes e reclamações técnicas.
 
