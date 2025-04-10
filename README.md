@@ -94,7 +94,8 @@ Outra conclusão a ser ressaltada, é que as redes de banda larga fixa já possu
 
 Após a análise das informações dentro do perímetro proposto (3 operadoras, 7 cidades) fiquei satisfeita com o resultado. O IND9 se mostrou como o KPI mais impactante para as reclamações técnicas na Anatel e para a manutenção da base de clientes, principalmente para as cidades de Rio de Janeiro e São Paulo.
 
-Duas limitações que eu gostaria de ter ajustado a tempo do MVP seriam  a carga do portal Anatel sem precisar salvar em diretório local, dezipar e fazer upload dos arquivos no DBFS, e integração do resultado do Databricks ao Power BI (Conexão databrick ao powerbi apenas com conta premium:                  https://docs.databricks.com/aws/en/partners/bi/power-bi).
+Duas limitações que eu gostaria de ter ajustado a tempo do MVP seriam  a carga do portal Anatel sem precisar salvar em diretório local, dezipar e fazer upload dos arquivos no DBFS, e integração do resultado do Databricks ao Power BI que não foi possível pelo meu perfil (Conexão databrick ao powerbi apenas com conta premium:https://docs.databricks.com/aws/en/partners/bi/power-bi).
 
 Para uma avaliação mais completa futura, entendo que outros motivos de reclamação na Anatel além dos técnicos e valores de Planos/ofertas deveriam ser analisados. Variações de temperatura e chuvas também afetam a qualidade do serviço, então informações meteorológicas agregariam positivamente no estudo.
-No módulo do machine Learning entendo que será possível explorar melhor uma quantidade maior de KPIs com a finalidade de entender qual teria mais peso na insatisfação do cliente.
+
+No módulo do machine Learning entendo que será possível explorar uma quantidade maior de KPIs com a finalidade de entender qual teria mais peso na insatisfação do cliente.
