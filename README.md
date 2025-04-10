@@ -54,7 +54,7 @@ Na camada prata foram criadas views selecionando tipo de produto internet na tab
 ![Modelo entidade-relacionamento](/images/modelo_entidade_relacionamento.png)
 
 Finalmente na camada ouro foi feito um Join entre as 3 views obtendo uma tabela final.
-Na sequência foi extraído um arquivo da tabela **anatel_scm** a ser analisado em powerbi, e elaborado seu respectivo catálogo de dados “catalogo-de-dados_anatel_scm.xlsx”.
+Na sequência foi extraído um arquivo da tabela **anatel_scm** a ser analisado em powerbi, e elaborado seu respectivo **catálogo de dados “catalogo-de-dados_anatel_scm.xlsx”**.
 
 
 ## Análise
