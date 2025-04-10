@@ -3,19 +3,19 @@ MVP - Engenharia de Dados (40530010057_20250_01)
 
 ## Objetivo
 
-Desafio: “Os Indicadores da agência reguladora de telecomunicações - Anatel que compõe o IQS (Índice de Qualidade do Serviço) e o número de reclamações por problemas técnicos influenciam diretamente na variação da base de clientes das operadoras?”
+Desafio: “Os Indicadores da agência reguladora de telecomunicações - Anatel, que compõe o IQS (Índice de Qualidade do Serviço), e o número de reclamações por problemas técnicos influenciam diretamente na variação da base de clientes das operadoras?”
 
-25 anos após a privatização do setor de Telecomunicações, é sabido que os serviços de telefonia e banda larga fixos assim como móveis atingiram altos patamares de maturidade do ponto de vista de tecnologia e cobertura. As áreas comerciais das operadoras seguem constantemente se empenhando para que o cliente tenha uma boa experiência com atendimento e ofertas atrativas, e as áreas técnicas com qualidade de serviço e cobertura abrangente.
+25 anos após a privatização do setor de Telecomunicações, é sabido que os serviços de telefonia e banda larga fixos, assim como móveis, atingiram altos patamares de maturidade do ponto de vista de tecnologia e cobertura. As áreas comerciais das operadoras seguem constantemente se empenhando para que o cliente tenha uma boa experiência com atendimento e ofertas atrativas, e as áreas técnicas com qualidade de serviço e cobertura abrangente.
 
-Neste MVP tentaremos responder se os indicadores que compões o índice de qualidade do serviço (IQS) de Banda larga fixa (internet residencial) influenciam no número de reclamações técnicas na Anatel e se consequentemente impactam na manutenção de número de clientes na base.
+Neste MVP tentarei responder se os indicadores que compões o índice de qualidade do serviço (IQS) de Banda larga fixa (internet residencial) influenciam no número de reclamações técnicas na Anatel e se, consequentemente, impactam na manutenção de número de clientes na base.
 
-Entende-se que o número de reclamações na agência reguladora é um termômetro de insatisfação com o serviço, e que o Churn é causado por muitos fatores, mas será que os indicadores regulatórios do IQS são capazes de refletir o que acontece no mercado?
+Entende-se que o número de reclamações na agência reguladora é um termômetro de insatisfação com o serviço, e que o Churn é causado por muitos fatores. Mas será que os indicadores regulatórios do IQS são capazes de refletir o que acontece no mercado?
 
-A partir de pandemia de covid em 2020, com a popularização do modelo de teletrabalho, aumento de  aplicativos de streaming, rede social, dispositivos inteligentes (ie. Amazon Alexa), o serviço de banda larga fixa adquiriu um alto nível de exigência de seu público consumidor.
+A partir de pandemia de covid em 2020, com a popularização do modelo de teletrabalho, aumento no uso de  aplicativos de streaming, de rede social e dispositivos inteligentes (ie. Amazon Alexa), o serviço de banda larga fixa adquiriu um alto nível de exigência de seu público consumidor.
 
-Neste MVP vou limitar o perímetro aos três principais grupo de operadoras (Tim, Vivo e Claro), ao serviço Banda larga fixa (para a agência SCM – serviço de comunicação multimídia) e sete municípios capitais do Brasil.
+Neste MVP vou limitar o perímetro aos três principais grupo de operadoras (Tim, Vivo e Claro), ao serviço Banda larga fixa (para a agência SCM – serviço de comunicação multimídia) e à sete municípios capitais do Brasil.
 
-As reclamações Anatel consideradas nesta avaliação são de motivo técnico (Qualidade, Funcionamento e Reparo, Instalação / Ativação ou Habilitação / Mudança de Endereço) e os Indicadores SCM que compõe o Índice de Qualidade do Serviço (IQS) que são os de rede -IND4, IND5, IND6, IND7, IND8- e o de relacionamento- IND9, de acordo com o resumo abaixo:
+As reclamações Anatel consideradas nesta avaliação são de motivo técnico (Qualidade, Funcionamento e Reparo, Instalação / Ativação ou Habilitação / Mudança de Endereço). Já os Indicadores SCM que compõe o Índice de Qualidade do Serviço (IQS) serão IND4, IND5, IND6, IND7, IND8 _de rede_, e o IN9 _de relacionamento_, conforme o resumo abaixo:
 
 | Grupo          | Acrônimo | Indicador                                      | Descrição                                                                                                                                  |
 |----------------|----------|------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------|
@@ -43,7 +43,7 @@ https://www.anatel.gov.br/dadosabertos/paineis_de_dados/consumidor/consumidor_re
 https://www.anatel.gov.br/dadosabertos/paineis_de_dados/acessos/acessos_banda_larga_fixa.zip
 https://www.anatel.gov.br/dadosabertos/paineis_de_dados/qualidade/indicadores_rqual.zip
 
- Como os arquivos do site Anatel são grandes (~2G), optei por pré-processar os arquivos de entrada, baixando na minha máquina local os zips, dezipando também local, e fazendo upload para o DBFS - Databricks.
+ Como os arquivos do site Anatel são grandes (~2G), optei por pré-processá-los localmente, baixando os zips, dezipando, e posteriormente fazendo upload para o DBFS - Databricks.
                 
 Usando como referência a arquitetura medalhão, os dados passaram pelas camadas bronze, prata e ouro até obter uma tabela final com os dados relevantes para a análise em powerbi da relação entre indicadores Anatel, número de clientes e reclamações técnicas.
 
@@ -54,7 +54,7 @@ Na camada prata foram criadas views selecionando tipo de produto internet na tab
 ![Modelo entidade-relacionamento](/images/modelo_entidade_relacionamento.png)
 
 Finalmente na camada ouro foi feito um Join entre as 3 views obtendo uma tabela final.
-Na sequência foi extraído um arquivo da tabela **anatel_scm** a ser analisado em powerbi, e elaborado seu respectivo **catálogo de dados “catalogo-de-dados_anatel_scm.xlsx”**.
+Na sequência foi extraído um arquivo da tabela **anatel_scm** a ser analisado em Power Bi, e elaborado seu respectivo **catálogo de dados “catalogo-de-dados_anatel_scm.xlsx”**.
 
 
 ## Análise
@@ -63,7 +63,7 @@ Com a tabela final foram criados em powerbi 7 dashboards, um para cada um dos 7 
 
 Nos dashboards existem gráficos comparando as 3 operadoras para cada indicador proposto (IND4 ao IND9), contrastando também o número de clientes e número de reclamações técnicas na Anatel.
 
-Para fim de comparações, no Powerbi foi criada a métrica “Reclamações a cada mil clientes” pois em alguns municípios o *marketshare* de uma operadora pode ser muito superior as outras, sendo possível com esta métrica avaliar as reclamações de forma proporcional ao número de clientes na base.
+Para fim de comparações, no Power Bi foi criada a métrica “Reclamações a cada mil clientes” pois em alguns municípios o *marketshare* de uma operadora pode ser muito superior as outras, sendo possível com esta métrica avaliar as reclamações de forma proporcional ao número de clientes na base.
 
 Desta forma, respondendo ao questionamento inicial proposto neste MVP, podemos avaliar para as 7 cidades se “Os Indicadores da agência reguladora de telecomunicações - Anatel que compõe o IQS (Índice de Qualidade do Serviço) e o número de reclamações por problemas técnicos influenciam diretamente na variação da base de clientes das operadoras?”
 
@@ -94,7 +94,7 @@ Outra conclusão a ser ressaltada, é que as redes de banda larga fixa já possu
 
 Após a análise das informações dentro do perímetro proposto (3 operadoras, 7 cidades) fiquei satisfeita com o resultado. O IND9 se mostrou como o KPI mais impactante para as reclamações técnicas na Anatel e para a manutenção da base de clientes, principalmente para as cidades de Rio de Janeiro e São Paulo.
 
-Uma limitação que eu gostaria de ter procurado mais opções para ajustar a tempo do MVP seria uma carga das tabelas no portal Anatel sem precisar fazer upload manual dos arquivos no DBFS do databricks community edition. O tamanho dos arquivos do site Anatel dificultaram o desempenho já que o tempo do cluster é limitado. Outro tema que entendi não ser possível de solucionar neste momento por causa da minha licença limitada de powerbi foi a integração do resultado da tabela final do Databricks ao Power BI (Conexão databrick ao powerbi apenas com conta premium:https://docs.databricks.com/aws/en/partners/bi/power-bi).
+Uma limitação que eu gostaria de ter procurado mais opções para ajustar a tempo do MVP seria uma carga das tabelas no portal Anatel sem precisar fazer upload manual dos arquivos no DBFS do databricks community edition. O tamanho dos arquivos do site Anatel dificultaram o desempenho já que o tempo do cluster é limitado. Outro tema que entendi não ser possível de solucionar neste momento, por causa da minha licença limitada de powerbi, foi a integração do resultado da tabela final do Databricks ao Power BI (Conexão databrick ao Power Bi apenas com conta premium:https://docs.databricks.com/aws/en/partners/bi/power-bi).
 
 Para uma avaliação mais completa futura, entendo que outros motivos de reclamação na Anatel além dos técnicos e valores de planos/ofertas deveriam ser analisados. Variações de temperatura e chuvas também afetam a qualidade do serviço, então informações meteorológicas agregariam positivamente no estudo.
 
