@@ -13,7 +13,7 @@ Entende-se que o número de reclamações na agência reguladora é um termômet
 
 A partir de pandemia de covid em 2020, com a popularização do modelo de teletrabalho, aumento no uso de aplicativos de streaming, de rede social e dispositivos inteligentes (ie. Amazon Alexa), o serviço de banda larga fixa adquiriu um alto nível de exigência de seu público consumidor.
 
-Neste MVP vou limitar o perímetro aos três principais grupo de operadoras (Tim, Vivo e Claro), ao serviço Banda larga fixa (para a agência SCM – serviço de comunicação multimídia) e à sete municípios capitais do Brasil.
+Neste MVP vou limitar o perímetro ao ano de 2024, aos três principais grupo de operadoras (Tim, Vivo e Claro), ao serviço Banda larga fixa (para a agência: SCM – serviço de comunicação multimídia) e à sete cidades capitais do Brasil.
 
 As reclamações Anatel consideradas nesta avaliação são de motivo técnico (Qualidade, Funcionamento e Reparo, Instalação / Ativação ou Habilitação / Mudança de Endereço). Já os Indicadores SCM que compõe o Índice de Qualidade do Serviço (IQS) serão IND4, IND5, IND6, IND7, IND8 _de rede_, e o IN9 _de relacionamento_, conforme o resumo abaixo:
 
@@ -33,6 +33,12 @@ Abaixo segue a lista dos valores de corte para indicadores de rede IND4 a IND7 p
 | DSL        | 5 Mbit/s  | 1 Mbit/s  | 80 ms | 40 ms | 2%   |
 | GPON       | 25 Mbit/s | 5 Mbit/s  | 80 ms | 40 ms | 2%   |
 
+Valores de referência inferiores e superiores dos indicadores são informados pela Anatel, **sendo o intervalo aonde os resultados devem estar contidos**.
+
+| Valor | IND4 | IND5  | IND6  | IND9  | IND8 |  IND9 |
+|------------|-----------|-----------|-------|-------|------|------|
+| VR sup        | 90%  | 95%  | 95% | 95% | 99,99% | 90% |
+| VR inf       | 60% | 65%  | 65% | 65% | 98%  | 60% |
 
 
 ## Coleta, Modelagem e Carga
@@ -43,7 +49,7 @@ https://www.anatel.gov.br/dadosabertos/paineis_de_dados/consumidor/consumidor_re
 https://www.anatel.gov.br/dadosabertos/paineis_de_dados/acessos/acessos_banda_larga_fixa.zip
 https://www.anatel.gov.br/dadosabertos/paineis_de_dados/qualidade/indicadores_rqual.zip
 
-Como os arquivos do site Anatel são grandes (~2G), optei por pré-processá-los localmente, baixando os zips, dezipando, e posteriormente fazendo upload para o DBFS (Databricks).
+Como os arquivos do site Anatel são grandes (~2G) e alguns possuem muitos arquivos históricos zipados, optei por pré-processá-los localmente, baixando os zips, dezipando, selecionando os arquivos do ano de 2024 e posteriormente fazendo upload para o DBFS (Databricks).
 
 Usando como referência a arquitetura medalhão, os dados passaram pelas camadas bronze, prata e ouro até obter uma tabela final com os dados relevantes para a análise em Power BI da relação entre indicadores Anatel, número de clientes e reclamações técnicas.
 
